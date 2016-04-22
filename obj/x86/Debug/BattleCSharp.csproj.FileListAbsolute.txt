@@ -1,0 +1,7 @@
+C:\Users\user\Downloads\Battleship_CS_2016\obj\x86\Debug\BattleCSharp.csprojResolveAssemblyReference.cache
+C:\Users\user\Downloads\Battleship_CS_2016\bin\Debug\lib\SwinGame.dll.mdb
+C:\Users\user\Downloads\Battleship_CS_2016\bin\Debug\WindowsApplication.exe
+C:\Users\user\Downloads\Battleship_CS_2016\bin\Debug\WindowsApplication.pdb
+C:\Users\user\Downloads\Battleship_CS_2016\bin\Debug\SwinGame.dll
+C:\Users\user\Downloads\Battleship_CS_2016\obj\x86\Debug\WindowsApplication.exe
+C:\Users\user\Downloads\Battleship_CS_2016\obj\x86\Debug\WindowsApplication.pdb
