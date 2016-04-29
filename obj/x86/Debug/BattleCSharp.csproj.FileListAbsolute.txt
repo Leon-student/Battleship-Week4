@@ -5,3 +5,5 @@ C:\Users\user\Downloads\Battleship_CS_2016\bin\Debug\WindowsApplication.pdb
 C:\Users\user\Downloads\Battleship_CS_2016\bin\Debug\SwinGame.dll
 C:\Users\user\Downloads\Battleship_CS_2016\obj\x86\Debug\WindowsApplication.exe
 C:\Users\user\Downloads\Battleship_CS_2016\obj\x86\Debug\WindowsApplication.pdb
+C:\Users\mattr_000\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\obj\x86\Debug\WindowsApplication.exe
+C:\Users\mattr_000\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\obj\x86\Debug\WindowsApplication.pdb
