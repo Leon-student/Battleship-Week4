@@ -50,7 +50,7 @@ public class AIMediumPlayer : AIPlayer
 					TargetCoords(ref row, ref column);
 					break;
 				default:
-					throw new ApplicationException("AI has gone in an imvalid state");
+					throw new ApplicationException("AI has gone in an invalid state");
 			}
 		} while ((row < 0 || column < 0 || row >= EnemyGrid.Height || column >= EnemyGrid.Width || EnemyGrid[row, column] != TileView.Sea));
 		//while inside the grid and not a sea tile do the search
