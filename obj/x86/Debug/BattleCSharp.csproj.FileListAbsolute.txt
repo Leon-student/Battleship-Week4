@@ -19,3 +19,10 @@ C:\Users\mattr_000\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battl
 C:\Users\mattr_000\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\obj\x86\Debug\BattleCSharp.csprojResolveAssemblyReference.cache
 C:\Users\mattr_000\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\obj\x86\Debug\WindowsApplication.exe
 C:\Users\mattr_000\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\obj\x86\Debug\WindowsApplication.pdb
+C:\Users\Matt\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\bin\Debug\lib\SwinGame.dll.mdb
+C:\Users\Matt\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\bin\Debug\WindowsApplication.exe
+C:\Users\Matt\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\bin\Debug\WindowsApplication.pdb
+C:\Users\Matt\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\bin\Debug\SwinGame.dll
+C:\Users\Matt\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\obj\x86\Debug\BattleCSharp.csprojResolveAssemblyReference.cache
+C:\Users\Matt\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\obj\x86\Debug\WindowsApplication.exe
+C:\Users\Matt\OneDrive\Documents\DevToolsAndPractices\Battleship Game\Battleship-Week4\obj\x86\Debug\WindowsApplication.pdb
