@@ -187,6 +187,8 @@ public class Player : IEnumerable<Ship>
 
 		switch (result.Value) {
 			case ResultOfAttack.Destroyed:
+				_hits += 1;
+				break;
 			case ResultOfAttack.Hit:
 				_hits += 1;
 				break;
