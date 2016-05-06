@@ -84,11 +84,6 @@ public class BattleShipsGame
 
 		newAttack = Player.Shoot(row, col);
 
-		//Will exit the game when all players ships are destroyed
-		if (_players[otherPlayer].IsDestroyed) {
-			newAttack = new AttackResult(ResultOfAttack.GameOver, newAttack.Ship, newAttack.Text, row, col);
-		}
-
 		if (AttackCompleted != null) {
 			AttackCompleted(this, newAttack);
 		}
@@ -97,10 +92,19 @@ public class BattleShipsGame
 		if ((newAttack.Value == ResultOfAttack.Miss) || 
 			(newAttack.Value == ResultOfAttack.Hit) ||
 			(newAttack.Value == ResultOfAttack.Destroyed))
-        {
-			_playerIndex = otherPlayer;
+		{
+            //quickly endsgame CHEAT.
+            if (row == 1 && col == 1)
+            {
+                newAttack = new AttackResult(ResultOfAttack.GameOver, newAttack.Ship, newAttack.Text, row, col);
+            }
+            //if the player or AI has destroyed all of the opponents battleships end the game.
+            if (_players[otherPlayer].IsDestroyed)
+            {
+                newAttack = new AttackResult(ResultOfAttack.GameOver, newAttack.Ship, newAttack.Text, row, col);
+            }
+                _playerIndex = otherPlayer;
 		}
-
 		return newAttack;
 	}
 }

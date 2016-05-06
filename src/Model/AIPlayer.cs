@@ -116,6 +116,8 @@ public abstract class AIPlayer : Player
 			result = _game.Shoot(row, column);
 			//take shot
 			ProcessShot(row, column, result);
+
+
 		return result;
 	}
 

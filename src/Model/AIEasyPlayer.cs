@@ -8,7 +8,7 @@ using System.Diagnostics;
 public class AIEasyPlayer : AIPlayer
 {
     public AIEasyPlayer(BattleShipsGame controller) : base(controller)
-	{
+    {
     }
 
     /// <summary>

@@ -96,7 +96,8 @@ static class HighScoreController
 	/// 
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
-	private static void SaveScores()
+	/// CHANGED FROM PRIVATE TO PUBLIC
+	public static void SaveScores()
 	{
 		string filename = null;
 		filename = SwinGame.PathToResource("highscores.txt");
@@ -177,8 +178,8 @@ static class HighScoreController
 
 			int x = 0;
 			x = SCORES_LEFT + SwinGame.TextWidth(GameResources.GameFont("Courier"), "Name: ");
-
-			SwinGame.StartReadingText(Color.White, NAME_WIDTH, GameResources.GameFont("Courier"), x, ENTRY_TOP);
+            //it cant be X or Entry_TOP.
+			SwinGame.StartReadingText(Color.White, 4, GameResources.GameFont("Courier"), x, ENTRY_TOP);
 
 			//Read the text from the user
 			while (SwinGame.ReadingText()) {
@@ -186,20 +187,21 @@ static class HighScoreController
 
 				UtilityFunctions.DrawBackground();
 				DrawHighScores();
-				SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
+                SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
 				SwinGame.RefreshScreen();
 			}
 
 			s.Name = SwinGame.TextReadAsASCII();
 
-			if (s.Name.Length < 3) {
-				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
+			if (s.Name.Length > 3) {
+                s.Name = s.Name.Substring(0, 3);
+				//s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
 			}
 
 			_Scores.RemoveAt(_Scores.Count - 1);
 			_Scores.Add(s);
 			_Scores.Sort();
-
+			SaveScores ();
 			GameController.EndCurrentState();
 		}
 	}

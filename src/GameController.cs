@@ -76,6 +76,9 @@ public static class GameController
 
 		//create the players
 		switch (_aiSetting) {
+            case AIOption.Easy:
+                _ai = new AIEasyPlayer(_theGame);
+				break;
 			case AIOption.Medium:
 				_ai = new AIMediumPlayer(_theGame);
 				break;
@@ -250,20 +253,20 @@ public static class GameController
 	private static void CheckAttackResult(AttackResult result)
 	{
 		switch (result.Value) {
+		case ResultOfAttack.Destroyed:
+			if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
+				AIAttack();
+			break;
+		case ResultOfAttack.Hit:
+			if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
+				AIAttack();
+			break;
 			case ResultOfAttack.Miss:
 				if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
 					AIAttack();
 				break;
 			case ResultOfAttack.GameOver:
 				SwitchState(GameState.EndingGame);
-				break;
-			case ResultOfAttack.Hit:
-				if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
-					AIAttack();
-				break;
-			case ResultOfAttack.Destroyed:
-				if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
-					AIAttack();
 				break;
 		}
 	}

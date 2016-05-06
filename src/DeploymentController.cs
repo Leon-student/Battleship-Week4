@@ -100,13 +100,13 @@ static class DeploymentController
 		//Calculate the row/col clicked
 		int row = 0;
 		int col = 0;
-		row = Convert.ToInt32(Math.Floor((mouse.Y - UtilityFunctions.FIELD_TOP)  / (UtilityFunctions.CELL_HEIGHT + UtilityFunctions.CELL_GAP)));
+		row = Convert.ToInt32(Math.Floor((mouse.Y - UtilityFunctions.FIELD_TOP) / (UtilityFunctions.CELL_HEIGHT + UtilityFunctions.CELL_GAP)));
 		col = Convert.ToInt32(Math.Floor((mouse.X - UtilityFunctions.FIELD_LEFT) / (UtilityFunctions.CELL_WIDTH + UtilityFunctions.CELL_GAP)));
-
 		if (row >= 0 & row < GameController.HumanPlayer.PlayerGrid.Height) {
 			if (col >= 0 & col < GameController.HumanPlayer.PlayerGrid.Width) {
 				//if in the area try to deploy
 				try {
+					//-3 is added to compensate for a logical error with swingame in the code.
 					GameController.HumanPlayer.PlayerGrid.MoveShip(row, col, _selectedShip, _currentDirection);
 				} catch (Exception ex) {
 					Audio.PlaySoundEffect(GameResources.GameSound("Error"));
