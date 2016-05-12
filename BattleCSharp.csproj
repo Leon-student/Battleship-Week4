@@ -99,6 +99,7 @@
     <Content Include="Resources\bundles\FileDialog.txt" />
     <Content Include="Resources\bundles\splash.txt" />
     <Content Include="Resources\highscores.txt" />
+    <Content Include="Resources\images\alt_discover.jpg" />
     <Content Include="Resources\images\deploy.jpg" />
     <Content Include="Resources\images\deploy_button_hl.png" />
     <Content Include="Resources\images\deploy_dir_button_horiz.png" />
