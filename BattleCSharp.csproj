@@ -97,6 +97,7 @@
     <Content Include="Resources\animations\startup.txt" />
     <Content Include="Resources\bundles\FileDialog.txt" />
     <Content Include="Resources\bundles\splash.txt" />
+    <Content Include="Resources\defaultscores.txt" />
     <Content Include="Resources\highscores.txt" />
     <Content Include="Resources\images\deploy.jpg" />
     <Content Include="Resources\images\deploy_button_hl.png" />
