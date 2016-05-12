@@ -37,7 +37,8 @@ static class MenuController
 		new string[] {
 			"EASY",
 			"MEDIUM",
-			"HARD"
+			"HARD",
+            "TOGGLE BACKGROUND"        
 		}
 
 	};
@@ -61,6 +62,8 @@ static class MenuController
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
+
+    private const int SETUP_MENU_BACKGROUND1_BUTTON = 3;
 
 	private const int SETUP_MENU_EXIT_BUTTON = 3;
 	private const int GAME_MENU_RETURN_BUTTON = 0;
@@ -293,6 +296,9 @@ static class MenuController
 			case SETUP_MENU_HARD_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
+            case SETUP_MENU_BACKGROUND1_BUTTON:
+                GameController.setBackground("AltDiscovery");
+                break;
 		}
 		//Always end state - handles exit button as well
 		GameController.EndCurrentState();

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="build.sh" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="clean.sh" />
     <None Include="lib\cygpath" />
     <None Include="lib\godly\libSGSDK.dylib" />

@@ -238,8 +238,15 @@ static class UtilityFunctions
 				break;
 			case GameState.Discovering:
 			case GameState.EndingGame:
-				SwinGame.DrawBitmap(GameResources.GameImage("Discovery"), 0, 0);
-				break;
+                string back = GameController.getBackground();
+                if (back.Equals("Discovery") ){
+                    SwinGame.DrawBitmap(GameResources.GameImage("Discovery"), 0, 0);
+                    break;
+                } else if (back.Equals("AltDiscovery")) {
+                    SwinGame.DrawBitmap(GameResources.GameImage("AltDiscovery"), 0, 0);
+                    break;
+                }
+                break;
 			case GameState.Deploying:
 				SwinGame.DrawBitmap(GameResources.GameImage("Deploy"), 0, 0);
 				break;
