@@ -304,7 +304,7 @@ static class MenuController
                 else
                 {
                     DeploymentController.SOUND = true;
-                  // Audio.StopMusic();
+                 
                     Audio.PlayMusic(GameResources.GameMusic("Background"));
                 }
                 
