@@ -34,7 +34,7 @@ static class DeploymentController
 	private const int DIR_BUTTONS_WIDTH = 47;
     
 	private const int TEXT_OFFSET = 5;
-    public static bool SOUND = false;
+    public static bool SOUND = true;
 	private static Direction _currentDirection = Direction.UpDown;
 
 	private static ShipName _selectedShip = ShipName.Tug;
