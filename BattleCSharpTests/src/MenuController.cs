@@ -37,8 +37,7 @@ static class MenuController
 		new string[] {
 			"EASY",
 			"MEDIUM",
-			"HARD",
-            "SOUND"
+			"HARD"
 		}
 
 	};
@@ -62,9 +61,8 @@ static class MenuController
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
-    private const int SETUP_MENU_SOUND_BUTTON = 3;
 
-	private const int SETUP_MENU_EXIT_BUTTON = 4;
+	private const int SETUP_MENU_EXIT_BUTTON = 3;
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
 
@@ -295,20 +293,6 @@ static class MenuController
 			case SETUP_MENU_HARD_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
-            case SETUP_MENU_SOUND_BUTTON:
-                if (DeploymentController.SOUND == true)
-                {
-                    DeploymentController.SOUND = false;
-                    Audio.StopMusic();
-                }
-                else
-                {
-                    DeploymentController.SOUND = true;
-                  // Audio.StopMusic();
-                    Audio.PlayMusic(GameResources.GameMusic("Background"));
-                }
-                
-                break;
 		}
 		//Always end state - handles exit button as well
 		GameController.EndCurrentState();
@@ -335,15 +319,4 @@ static class MenuController
 				break;
 		}
 	}
-    public static void PlaySound(string filename)
-    {
-        if (DeploymentController.SOUND == true)
-        {
-            Audio.PlaySoundEffect(GameResources.GameSound(filename));
-        }
-        else
-        {
-            // do nothing.
-        }
-    }
 }

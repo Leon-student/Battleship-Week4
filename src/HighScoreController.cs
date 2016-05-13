@@ -114,6 +114,15 @@ static class HighScoreController
 		output.Close();
 	}
 
+    public static void ClearScores()
+    {
+        string filename = null;
+        filename = SwinGame.PathToResource("highscores.txt");
+        StreamWriter output = default(StreamWriter);
+        output = new StreamWriter(filename);
+        output.WriteLine( );
+        output.Close();
+    }
 	/// <summary>
 	/// Draws the high scores to the screen.
 	/// </summary>

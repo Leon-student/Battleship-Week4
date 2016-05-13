@@ -32,9 +32,8 @@ static class DeploymentController
 	private const int RANDOM_BUTTON_WIDTH = 51;
 
 	private const int DIR_BUTTONS_WIDTH = 47;
-    
+
 	private const int TEXT_OFFSET = 5;
-    public static bool SOUND = false;
 	private static Direction _currentDirection = Direction.UpDown;
 
 	private static ShipName _selectedShip = ShipName.Tug;
@@ -107,10 +106,10 @@ static class DeploymentController
 			if (col >= 0 & col < GameController.HumanPlayer.PlayerGrid.Width) {
 				//if in the area try to deploy
 				try {
-					
+					//-3 is added to compensate for a logical error with swingame in the code.
 					GameController.HumanPlayer.PlayerGrid.MoveShip(row, col, _selectedShip, _currentDirection);
 				} catch (Exception ex) {
-                    MenuController.PlaySound("Error");
+					Audio.PlaySoundEffect(GameResources.GameSound("Error"));
 					UtilityFunctions.Message = ex.Message;
 				}
 			}

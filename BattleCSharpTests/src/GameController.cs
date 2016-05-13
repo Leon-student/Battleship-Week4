@@ -128,7 +128,7 @@ public static class GameController
 			UtilityFunctions.AddExplosion(row, column);
 		}
 
-        MenuController.PlaySound("Hit");
+		Audio.PlaySoundEffect(GameResources.GameSound("Hit"));
 
 		UtilityFunctions.DrawAnimationSequence();
 	}
@@ -139,7 +139,7 @@ public static class GameController
 			UtilityFunctions.AddSplash(row, column);
 		}
 
-        MenuController.PlaySound("Miss");
+		Audio.PlaySoundEffect(GameResources.GameSound("Miss"));
 
 		UtilityFunctions.DrawAnimationSequence();
 	}
@@ -166,19 +166,22 @@ public static class GameController
 		switch (result.Value) {
 			case ResultOfAttack.Destroyed:
 				PlayHitSequence(result.Row, result.Column, isHuman);
-                MenuController.PlaySound("Sink");
+				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
 
 				break;
 			case ResultOfAttack.GameOver:
 				PlayHitSequence(result.Row, result.Column, isHuman);
-                MenuController.PlaySound("Sink");
-                    SwinGame.Delay(10);
+				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
+
+				while (Audio.SoundEffectPlaying(GameResources.GameSound("Sink"))) {
+					SwinGame.Delay(10);
 					SwinGame.RefreshScreen();
+				}
 
 				if (HumanPlayer.IsDestroyed) {
-                    MenuController.PlaySound("Lose");
+					Audio.PlaySoundEffect(GameResources.GameSound("Lose"));
 				} else {
-                    MenuController.PlaySound("Winner");
+					Audio.PlaySoundEffect(GameResources.GameSound("Winner"));
 				}
 
 				break;
@@ -189,7 +192,7 @@ public static class GameController
 				PlayMissSequence(result.Row, result.Column, isHuman);
 				break;
 			case ResultOfAttack.ShotAlready:
-                MenuController.PlaySound("Error");
+				Audio.PlaySoundEffect(GameResources.GameSound("Error"));
 				break;
 		}
 	}

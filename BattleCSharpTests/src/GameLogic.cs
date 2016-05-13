@@ -12,10 +12,11 @@ static class GameLogic
 	{
 		//Opens a new Graphics Window
 		SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
+
 		//Load Resources
 		GameResources.LoadResources();
 
-		Audio.PlayMusic(GameResources.GameMusic("Background"));
+		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
 		//Game Loop
 		do {
