@@ -57,11 +57,17 @@ static class HighScoreController
 	/// 
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
-	private static void LoadScores()
+	private static void LoadScores(string file)
 	{
 		string filename = null;
-		filename = SwinGame.PathToResource("highscores.txt");
-
+        if (file.Equals("reset"))
+        {
+            filename = SwinGame.PathToResource("defaultscores.txt");
+        }
+        else
+        {
+            filename = SwinGame.PathToResource("highscores.txt");
+        }
 		StreamReader input = default(StreamReader);
 		input = new StreamReader(filename);
 
@@ -124,7 +130,7 @@ static class HighScoreController
 		const int SCORE_GAP = 30;
 
 		if (_Scores.Count == 0)
-			LoadScores();
+			LoadScores("");
 
 		SwinGame.DrawText("   High Scores   ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_HEADING);
 
@@ -141,19 +147,34 @@ static class HighScoreController
 			} else {
 				SwinGame.DrawText(i + 1 + ":   " + s.Name + "   " + s.Value, Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
 			}
+
+            SwinGame.DrawText("Press backspace to reset scores", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, SCORES_TOP + 10 * SCORE_GAP);
 		}
 	}
 
-	/// <summary>
-	/// Handles the user input during the top score screen.
-	/// </summary>
-	/// <remarks></remarks>
-	public static void HandleHighScoreInput()
-	{
-		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
-			GameController.EndCurrentState();
-		}
-	}
+    /// <summary>
+    /// Handles the user input during the top score screen.
+    /// </summary>
+    /// <remarks></remarks>
+    public static void HandleHighScoreInput()
+    {
+        const int SCORES_TOP = 80;
+        const int SCORE_GAP = 30;
+
+        if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN))
+        {            
+                GameController.EndCurrentState();
+        }
+
+        if (SwinGame.KeyTyped(KeyCode.vk_BACKSPACE))
+        {
+            LoadScores("reset");
+            SaveScores();          
+            SwinGame.ClearScreen();
+            DrawHighScores();            
+        }
+          
+    }
 
 	/// <summary>
 	/// Read the user's name for their highsSwinGame.
@@ -167,7 +188,7 @@ static class HighScoreController
 		const int ENTRY_TOP = 500;
 
 		if (_Scores.Count == 0)
-			LoadScores();
+			LoadScores("");
 
 		//is it a high score
 		if (value > _Scores[_Scores.Count - 1].Value) {

@@ -38,8 +38,9 @@ static class MenuController
 			"EASY",
 			"MEDIUM",
 			"HARD",
-            "TOGGLE BACKGROUND"        
-		}
+            "TOGGLE BACKGROUND",     
+            "RESET SCORE"
+        }
 
 	};
 	private const int MENU_TOP = 575;
@@ -52,6 +53,7 @@ static class MenuController
 	private const int TEXT_OFFSET = 0;
 	private const int MAIN_MENU = 0;
 	private const int GAME_MENU = 1;
+    private const int HIGH_SCORE_MENU = 3;
 
 	private const int SETUP_MENU = 2;
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
@@ -68,6 +70,8 @@ static class MenuController
 	private const int SETUP_MENU_EXIT_BUTTON = 3;
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
+
+    private const int HIGH_SCORE_RESET = 0;
 
 	private const int GAME_MENU_QUIT_BUTTON = 2;
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
