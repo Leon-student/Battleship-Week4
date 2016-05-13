@@ -301,7 +301,11 @@ static class MenuController
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
             case SETUP_MENU_BACKGROUND1_BUTTON:
-                GameController.setBackground("AltDiscovery");
+				if (GameController.getBackground().Equals("Discovery"))	{
+					GameController.setBackground("AltDiscovery");
+				} else if (GameController.getBackground().Equals("AltDiscovery")) {
+					GameController.setBackground("Discovery");
+				}
                 break;
 		}
 		//Always end state - handles exit button as well
